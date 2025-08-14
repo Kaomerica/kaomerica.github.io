@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaomerica</title>
+    <title>Kaomerica - El sabor auténtico del cacao</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>dsasd</p>
+    <!-- HEADER -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Kaomerica</h1>
+            <p>El sabor auténtico del cacao desde la tierra a tu mesa</p>
+            <a href="#productos" class="btn">Descubrir</a>
+        </div>
+    </header>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre-nosotros" class="section">
+        <h2>Sobre Nosotros</h2>
+        <p>
+            En Kaomerica cultivamos y producimos cacao de alta calidad, respetando la tradición
+            y cuidando la tierra. Nuestra misión es llevar el sabor auténtico del cacao a todo el mundo.
+        </p>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="section">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-grid">
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200" alt="Granos de Cacao">
+                <h3>Granos de Cacao</h3>
+                <p>Cacao orgánico seleccionado, perfecto para chocolateros y reposteros.</p>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200" alt="Pasta de Cacao">
+                <h3>Pasta de Cacao</h3>
+                <p>Elaborada artesanalmente para conservar todo el aroma y sabor.</p>
+            </div>
+            <div class="producto">
+                <img src="https://via.placeholder.com/300x200" alt="Chocolate Artesanal">
+                <h3>Chocolate Artesanal</h3>
+                <p>Tabletas elaboradas con recetas únicas, sin aditivos artificiales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+        <h2>Contáctanos</h2>
+        <form class="form-contacto">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Kaomerica - Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>

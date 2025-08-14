@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #4a2c2a;
+}
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}
+
+.hero .btn {
+    background: #8B4513;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-contacto button {
+    background: #8B4513;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background: #4a2c2a;
+    color: white;
+    padding: 15px;
+}
