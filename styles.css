@@ -2,25 +2,57 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     color: #4a2c2a;
+    scroll-behavior: smooth;
 }
 
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(74,44,42,0.9);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000;
+}
+.navbar .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+}
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* Hero */
 .hero {
-    background: url('https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    background: url('img/hero.jpg') center/cover no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+    padding-top: 60px;
 }
-
 .hero h1 {
-    font-family: 'Playfair Display', serif;
     font-size: 3em;
-    margin-bottom: 0.2em;
+    font-family: 'Playfair Display', serif;
 }
-
-.hero .btn {
+.btn {
     background: #8B4513;
     padding: 10px 20px;
     color: white;
@@ -28,48 +60,92 @@ body {
     border-radius: 5px;
 }
 
+/* Secciones */
 .section {
-    padding: 50px 20px;
+    padding: 80px 20px;
     max-width: 1000px;
     margin: auto;
 }
-
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap: 20px;
 }
-
 .producto img {
     width: 100%;
     border-radius: 8px;
 }
 
+/* Formulario */
 .form-contacto {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 .form-contacto input,
 .form-contacto textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
 .form-contacto button {
     background: #8B4513;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
+/* Footer */
 footer {
     text-align: center;
     background: #4a2c2a;
     color: white;
     padding: 15px;
+}
+
+/* Animaciones */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+[data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll Top Button */
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #8B4513;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(74,44,42,0.95);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+    }
+    .navbar ul.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
 }
