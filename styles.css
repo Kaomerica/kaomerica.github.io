@@ -21,6 +21,34 @@
      overflow-x: hidden;
  }
 
+
+ /* Ajustes para logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 60px; /* tamaño pequeño */
+  width: 70px; /* tamaño pequeño */
+  object-fit: contain
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--gold);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
  /* Navbar modernizada */
  .navbar {
      position: fixed;
