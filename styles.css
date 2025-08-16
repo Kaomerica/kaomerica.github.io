@@ -36,16 +36,16 @@
 }
 
 .logo-img {
-  height: 60px; /* tamaño pequeño */
-  width: 70px; /* tamaño pequeño */
+  height: 50px; /* tamaño pequeño */
+  width: auto; /* tamaño pequeño */
   object-fit: contain
 }
 
 .logo-text {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
-  font-weight: 700;
-  color: var(--gold);
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--chocolate-white);
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -59,7 +59,7 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
-     padding: 15px 5%;
+     padding: 10px 5%;
      z-index: 1000;
      backdrop-filter: blur(10px);
      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
