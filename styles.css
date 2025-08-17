@@ -470,6 +470,11 @@
      color: var(--gold);
      padding-left: 5px;
  }
+ 
+ .footer-column a {
+  color: #fff;
+  text-decoration: none;
+}
 
  .copyright {
      text-align: center;
