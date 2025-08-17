@@ -88,3 +88,18 @@
             const scrollY = window.scrollY;
             document.querySelector('.hero').style.backgroundPositionY = `calc(50% + ${scrollY * 0.5}px)`;
         });
+
+
+
+        // Restricción Numero de Telefono
+        const telefonoInput = document.getElementById('telefono');
+
+telefonoInput.addEventListener('input', () => {
+  if (!telefonoInput.value.startsWith('09')) {
+    telefonoInput.setCustomValidity('El número de teléfono debe comenzar con 09');
+  } else if (telefonoInput.value.length !== 10) {
+    telefonoInput.setCustomValidity('El número de teléfono debe tener 10 dígitos');
+  } else {
+    telefonoInput.setCustomValidity('');
+  }
+});
