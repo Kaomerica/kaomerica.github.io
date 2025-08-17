@@ -484,7 +484,7 @@
      display: none;
      position: fixed;
      bottom: 30px;
-     right: 15px;
+     right: 10px;
      background: var(--chocolate-medium);
      color: white;
      border: none;
@@ -507,7 +507,7 @@
  .whatsapp-float {
   position: fixed;
   bottom: 110px;
-  right: 15px;
+  right: 10px;
   background-color: #25d366;
   color: #fff;
     width: 50px; /* Ajusta el ancho para que sea igual al botón de scroll */

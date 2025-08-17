@@ -67,21 +67,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Formulario interactivo
-        const form = document.querySelector('.form-contacto');
-        
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Simulación de envío exitoso
-            form.innerHTML = `
-                <div style="text-align: center; padding: 50px 20px;">
-                    <i class="fas fa-check-circle" style="font-size: 4em; color: #8B4513; margin-bottom: 20px;"></i>
-                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">¡Mensaje Enviado!</h3>
-                    <p>Gracias por contactarnos. Te responderemos a la brevedad.</p>
-                </div>
-            `;
-        });
+       
 
         // Efecto parallax para el hero
         window.addEventListener('scroll', () => {
@@ -102,4 +88,32 @@ telefonoInput.addEventListener('input', () => {
   } else {
     telefonoInput.setCustomValidity('');
   }
+});
+
+//FORMULARIO FORMSPREE
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    if (data.success) {
+      formStatus.innerText = '¡Mensaje enviado con éxito!';
+      form.reset();
+    } else {
+      formStatus.innerText = 'Error al enviar el mensaje. Inténtalo de nuevo.';
+    }
+  })
+  .catch((error) => {
+    formStatus.innerText = 'Error al enviar el mensaje. Inténtalo de nuevo.';
+  });
 });
