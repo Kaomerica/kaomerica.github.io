@@ -33,6 +33,19 @@
             });
         });
 
+        document.addEventListener('click', (event) => {
+  if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+    menu.classList.remove('show');
+    menuToggle.classList.remove('active');
+    
+    // Restaurar las barras del menú
+    const spans = menuToggle.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '';
+    spans[2].style.transform = '';
+  }
+});
+
         // Animaciones en scroll
         const animatedElements = document.querySelectorAll('[data-animate], .animate-left, .animate-right');
         
