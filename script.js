@@ -62,23 +62,25 @@
         animateOnScroll(); // Inicial
 
         // Botón scroll arriba
-        const scrollBtn = document.getElementById('scrollTopBtn');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-                
-                // Cambio de estilo en navbar
-                document.querySelector('.navbar').classList.add('scrolled');
-            } else {
-                scrollBtn.style.display = 'none';
-                document.querySelector('.navbar').classList.remove('scrolled');
-            }
-        });
-        
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+const scrollBtn = document.getElementById('scrollTopBtn');
+if (scrollBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.style.display = 'block';
+      
+      // Cambio de estilo en navbar
+      document.querySelector('.navbar').classList.add('scrolled');
+    } else {
+      scrollBtn.style.display = 'none';
+      document.querySelector('.navbar').classList.remove('scrolled');
+    }
+  });
+  
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 
        
 
@@ -90,43 +92,45 @@
 
 
 
-        // Restricción Numero de Telefono
-        const telefonoInput = document.getElementById('telefono');
-
-telefonoInput.addEventListener('input', () => {
-  if (!telefonoInput.value.startsWith('09')) {
-    telefonoInput.setCustomValidity('El número de teléfono debe comenzar con 09');
-  } else if (telefonoInput.value.length !== 10) {
-    telefonoInput.setCustomValidity('El número de teléfono debe tener 10 dígitos');
-  } else {
-    telefonoInput.setCustomValidity('');
-  }
-});
+       // Restricción Numero de Telefono
+const telefonoInput = document.getElementById('telefono');
+if (telefonoInput) {
+  telefonoInput.addEventListener('input', () => {
+    if (!telefonoInput.value.startsWith('09')) {
+      telefonoInput.setCustomValidity('El número de teléfono debe comenzar con 09');
+    } else if (telefonoInput.value.length !== 10) {
+      telefonoInput.setCustomValidity('El número de teléfono debe tener 10 dígitos');
+    } else {
+      telefonoInput.setCustomValidity('');
+    }
+  });
+}
 
 //FORMULARIO FORMSPREE
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const formData = new FormData(form);
-  fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then((response) => response.json())
-  .then((data) => {
-    if (data.success) {
-      formStatus.innerText = '¡Mensaje enviado con éxito!';
-      form.reset();
-    } else {
+if (form && formStatus) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        formStatus.innerText = '¡Mensaje enviado con éxito!';
+        form.reset();
+      } else {
+        formStatus.innerText = 'Error al enviar el mensaje. Inténtalo de nuevo.';
+      }
+    })
+    .catch((error) => {
       formStatus.innerText = 'Error al enviar el mensaje. Inténtalo de nuevo.';
-    }
-  })
-  .catch((error) => {
-    formStatus.innerText = 'Error al enviar el mensaje. Inténtalo de nuevo.';
+    });
   });
-});
+}
