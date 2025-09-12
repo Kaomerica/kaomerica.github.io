@@ -261,25 +261,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 5px;
   z-index: 2;
 
-  animation: blink 1s infinite; /* 👈 parpadeo */
+  /*animation: blink 3s infinite;  👈 parpadeo */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.scroll-down .arrow-down {
+/* Contenedor de flechas */
+.scroll-down .arrows {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px; /* espacio entre flechas */
+}
+
+/* Flecha */
+.arrow-down {
   width: 20px;
   height: 20px;
   border-left: 2px solid white;
   border-bottom: 2px solid white;
   transform: rotate(-45deg);
+  opacity: 0;
+  animation: arrowAnim 1.5s infinite;
+  
 }
 
-
+/* Animación escalonada para cada flecha */
+.arrow-down:nth-child(1) {
+  animation-delay: 0s;
+}
+.arrow-down:nth-child(2) {
+  animation-delay: 0.3s;
+}
 
 
  /* Secciones */
@@ -663,6 +680,13 @@ html {
   25%, 75% {
     opacity: 0.3;
   }
+}
+
+/* Animación flechas */
+@keyframes arrowAnim {
+  0% { opacity: 0; transform: rotate(-45deg) translateY(-5px); }
+  50% { opacity: 1; transform: rotate(-45deg) translateY(0); }
+  100% { opacity: 0; transform: rotate(-45deg) translateY(5px); }
 }
 
 
