@@ -42,7 +42,7 @@
 }
 
 .logo-text {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   font-weight: 400;
   color: rgba(74, 44, 42, 0.95);
@@ -51,25 +51,24 @@
 
  /* Navbar modernizada */
  .navbar {
-     position: fixed;
+      position: fixed;
      top: 0;
      width: 100%;
-     background: rgba(218, 176, 38, 0.95);
-     color: rgba(74, 44, 42, 0.95);
+     /* CAMBIO: Fondo blanco sólido */
+     background-color: var(--chocolate-white); 
+     color: var(--chocolate-dark);
      display: flex;
      justify-content: space-between;
      align-items: center;
-     padding: 10px 5%;
+     padding: 15px 5%; /* Un poco más de espacio */
      z-index: 1000;
-     backdrop-filter: blur(10px);
-     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+     /* CAMBIO: Sombra más sutil */
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
      transition: all 0.4s ease;
+     /* ELIMINAR: backdrop-filter: blur(10px); */
  }
 
- .navbar.scrolled {
-     padding: 10px 5%;
-     background: rgba(218, 176, 38, 0.95);
- }
+
 
  .navbar .logo {
      font-family: 'Playfair Display', serif;
@@ -86,7 +85,7 @@
  }
 
  .navbar ul li a {
-     color: rgba(74, 44, 42, 0.95); /* BOTONES MENU */
+     color: black; /* BOTONES MENU */
      text-decoration: none;
      font-weight: 600;
      position: relative;
@@ -101,7 +100,7 @@
      left: 0;
      width: 0;
      height: 2px;
-     background-color: rgba(74, 44, 42, 0.95);
+     background-color: black;
      transition: width 0.3s ease;
  }
 
@@ -110,7 +109,7 @@
  }
 
  .navbar ul li a:hover {
-     color: rgba(74, 44, 42, 0.95);
+     color: black;
  }
 
  .menu-toggle {
@@ -123,7 +122,7 @@
      display: block;
      width: 28px;
      height: 3px;
-     background: var(--chocolate-white);  /* BOTONES MENU */
+     background: black;  /* BOTONES MENU */
      margin: 5px 0;
      border-radius: 3px;
      transition: all 0.3s ease;
@@ -131,16 +130,15 @@
 
  /* Hero con efecto de paralaje */
  .hero {
-     background: linear-gradient(rgba(0, 0, 0, 0.4), url('')) center/cover no-repeat;
-     height: 100vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     color: white;
-     text-align: center;
-     padding-top: 60px;
-     position: relative;
-     overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end; /* 👉 lleva el contenido a la derecha */
+    align-items: center;
+    text-align: right; /* 👉 alinea el texto a la derecha */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 0 4%; /* 👉 separa del borde derecho */
  }
 
  .hero::before {
@@ -151,7 +149,7 @@
      width: 100%;
      height: 100%;
      background: url('/img/index.jpg') center/cover no-repeat;
-     background-attachment: fixed;
+     z-index: 1;
 
  }
 
@@ -178,24 +176,30 @@
 
  .hero-content {
      position: relative;
-     z-index: 2;
-     max-width: 800px;
-     padding: 0 20px;
+    z-index: 2;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* 👉 todo alineado a la derecha */
+    text-align: right;     /* 👉 texto alineado a la derecha */
+
  }
 
  .hero h1 {
-     font-size: 4.5em;
-     font-family: 'Playfair Display', serif;
-     margin-bottom: 20px;
+     font-size: 2.5em;
+     font-family: 'Open Sans', sans-serif;
+     margin-bottom: 5px;
+     text-align: right;
      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
      transform: translateY(30px);
      opacity: 0;
      animation: fadeUp 1s ease forwards 0.3s;
+     white-space: nowrap;   /* 👉 fuerza todo el texto en una sola línea */
  }
 
  .hero p {
      font-size: 1.5em;
-     margin-bottom: 30px;
+     margin-bottom: 15px;
      transform: translateY(30px);
      opacity: 0;
      animation: fadeUp 1s ease forwards 0.6s;
@@ -245,6 +249,38 @@
  .btn:hover {
      color: var(--chocolate-dark);
  }
+
+.scroll-down {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  z-index: 2;
+
+  animation: blink 1s infinite; /* 👈 parpadeo */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-down .arrow-down {
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+}
+
+
+
 
  /* Secciones */
  .section {
@@ -510,7 +546,7 @@
      display: none;
      position: fixed;
      bottom: 30px;
-     right: 10px;
+     right: 25px;
      background: var(--chocolate-medium);
      color: white;
      border: none;
@@ -533,7 +569,7 @@
  .whatsapp-float {
   position: fixed;
   bottom: 110px;
-  right: 10px;
+  right: 25px;
   background-color: #25d366;
   color: #fff;
     width: 50px; /* Ajusta el ancho para que sea igual al botón de scroll */
@@ -581,7 +617,7 @@
      display: block;
  }
 
- /* Animaciones */
+                        /* Animaciones */
  @keyframes fadeUp {
      to {
          transform: translateY(0);
@@ -618,6 +654,16 @@
      opacity: 1;
  }
 
+/* Animación de parpadeo para el texto */
+/* ✨ Animación de parpadeo */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0.3;
+  }
+}
 
 
  /* Responsive */
@@ -639,7 +685,6 @@
      .navbar ul {
          display: none;
          flex-direction: column;
-         background: rgba(218, 176, 38, 0.95);
          position: absolute;
          top: 70px;
          right: 0;
@@ -658,13 +703,32 @@
          display: block;
      }
 
-     .hero h1 {
-         font-size: 2.8em;
-     }
+     .hero {
+        justify-content: center;  /* 👉 centramos el bloque */
+        padding: 0 5%;            /* menos margen lateral */
+        text-align: center;
+    }
 
-     .hero p {
-         font-size: 1.2em;
-     }
+    .hero-content {
+        align-items: center;      /* 👉 texto y botón centrados */
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        text-align: center;
+        font-size: 1.8em;         /* más pequeño */
+        white-space: normal;      /* 👉 permite saltos */
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .hero .btn {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
 
      .section {
          padding: 80px 5%;
