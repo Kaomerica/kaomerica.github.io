@@ -252,7 +252,7 @@
 
 .scroll-down {
   position: absolute;
-  bottom: 50px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -731,7 +731,11 @@ html {
         justify-content: center;  /* 👉 centramos el bloque */
         padding: 0 5%;            /* menos margen lateral */
         text-align: center;
+        align-items: start;
+        padding: 200px 8% 0; /* 👈 espacio superior para no pegarlo al navbar */
     }
+
+
 
     .hero-content {
         align-items: center;      /* 👉 texto y botón centrados */
