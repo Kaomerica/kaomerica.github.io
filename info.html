@@ -33,6 +33,7 @@
       <li><a href="productos.html">Productos</a></li>
       <li><a href="sostenibilidad.html">Sostenibilidad</a></li>
       <li><a href="contacto.html">Contacto</a></li>
+      <li> <a href="info.html" class="btn-menu" >Cotiza Aquí</a></li>
     </ul>
     <div class="menu-toggle" id="menu-toggle">
       <span></span><span></span><span></span>
@@ -42,8 +43,8 @@
   <!-- HERO -->
   <section class="hero contacto-hero">
     <div class="hero-content">
-      <h1 data-animate>Contáctanos</h1>
-      <p data-animate>Estamos aquí para ti</p>
+      <h1 data-animate>Cotiza aquí</h1>
+      <p data-animate>Para compras grandes</p>
     </div>
   </section>
 
@@ -51,25 +52,94 @@
   <section class="section">
     <h2 data-animate>Formulario de Contacto</h2>
 
-    <form class="form-contacto" id="contact-form" action="https://formspree.io/f/myzpvbep" method="POST">
-       <div class="form-group half">
-    <input type="text" id="nombre" name="Nombre" placeholder=" " required>
-    <label for="nombre">Nombre</label>
-  </div>
-  <div class="form-group half">
-    <input type="email" id="email" name="Correo electrónico" placeholder=" " required>
-    <label for="email">Correo</label>
-  </div>
-  <div class="form-group half">
-    <input type="tel" id="telefono" name="Teléfono" placeholder=" " pattern="[0-9]{10}" required>
-    <label for="telefono">Teléfono</label>
-  </div>
-  <div class="form-group">
-    <textarea id="mensaje" name="Mensaje" placeholder=" " rows="5" required></textarea>
-    <label for="mensaje">Mensaje</label>
-  </div>
-      <button type="submit" class="btn">Enviar</button>
-      <div id="form-status"></div>
+     <form class="form-contacto" id="contact-form" action="https://formspree.io/f/myzpvbep" method="POST">
+        
+        <div class="form-group">
+            <input type="text" id="nombreApellido" name="Nombre y Apellido" placeholder=" " required>
+            <label for="nombreApellido">Nombre y apellido</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="empresa" name="Empresa" placeholder=" " required>
+            <label for="empresa">Empresa</label>
+        </div>
+
+        <div class="form-group">
+            <input type="email" id="emailTrabajo" name="Email de trabajo" placeholder=" " required>
+            <label for="emailTrabajo">Email de trabajo</label>
+        </div>
+
+        <div class="form-group">
+            <input type="tel" id="telefono" name="WhatsApp / Teléfono" placeholder=" ">
+            <label for="telefono">WhatsApp / Teléfono</label>
+        </div>
+
+        <div class="form-group">
+            <label for="producto">¿Qué producto necesitas?</label>
+            <select id="producto" name="Producto" required>
+                <option value="" disabled selected>Selecciona un producto...</option>
+                <option value="Grano">Grano</option>
+                <option value="Nibs">Nibs</option>
+                <option value="Licor">Licor</option>
+                <option value="Manteca">Manteca</option>
+                <option value="Polvo">Polvo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="cantidad" name="Cantidad estimada" placeholder=" " required>
+            <label for="cantidad">Cantidad estimada (Ej.: "1.2 toneladas" o "1 contenedor")</label>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="destino" name="Destino" placeholder=" ">
+            <label for="destino">Destino (país + ciudad/puerto)</label>
+        </div>
+
+        <div class="form-group">
+             <label for="frecuencia">Frecuencia de compra</label>
+            <select id="frecuencia" name="Frecuencia de compra">
+                <option value="Única" selected>Única</option>
+                <option value="Mensual">Mensual</option>
+                <option value="Trimestral">Trimestral</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="date" id="fechaEntrega" name="Fecha de entrega" placeholder=" ">
+            <label for="fechaEntrega">Fecha objetivo de entrega</label>
+        </div>
+        
+        <div class="form-group">
+            <label for="incoterm">Incoterm preferido</label>
+            <select id="incoterm" name="Incoterm">
+                <option value="A definir" selected>A definir</option>
+                <option value="EXW">EXW</option>
+                <option value="FOB">FOB</option>
+                <option value="CIF">CIF</option>
+            </select>
+        </div>
+
+        <div class="form-group-radio">
+            <p>¿Necesitas muestras?</p>
+            <input type="radio" id="muestrasSi" name="Necesita muestras" value="Sí">
+            <label for="muestrasSi">Sí</label>
+            <input type="radio" id="muestrasNo" name="Necesita muestras" value="No" checked>
+            <label for="muestrasNo">No</label>
+        </div>
+
+        <div class="form-group" id="direccion-muestras" style="display: none;">
+            <textarea id="direccionMuestras" name="Dirección para muestras" placeholder=" " rows="3"></textarea>
+            <label for="direccionMuestras">Dirección para envío de muestras</label>
+        </div>
+
+        <div class="form-group">
+            <textarea id="comentarios" name="Comentarios" placeholder=" " rows="5"></textarea>
+            <label for="comentarios">Comentarios (requisitos, empaque, etc.)</label>
+        </div>
+
+        <button type="submit" class="btn">Enviar</button>
+        <div id="form-status"></div>
     </form>
   </section>
 

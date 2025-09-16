@@ -134,3 +134,24 @@ if (form && formStatus) {
     });
   });
 }
+
+
+
+ // Script para mostrar/ocultar el campo de dirección
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioButtons = document.querySelectorAll('input[name="Necesita muestras"]');
+            const direccionDiv = document.getElementById('direccion-muestras');
+            const direccionTextarea = document.getElementById('direccionMuestras');
+
+            radioButtons.forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'Sí') {
+                        direccionDiv.style.display = 'block';
+                        direccionTextarea.setAttribute('required', '');
+                    } else {
+                        direccionDiv.style.display = 'none';
+                        direccionTextarea.removeAttribute('required');
+                    }
+                });
+            });
+        });
