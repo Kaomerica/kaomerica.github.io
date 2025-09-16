@@ -5,12 +5,18 @@
     --chocolate-cream: #e8d0b3;
     --chocolate-white: #f9f5f0;
     --gold: #d4af37;
+
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+ scroll-behavior: smooth;
+
 }
 
 body {
@@ -83,7 +89,7 @@ body {
     gap: 30px;
     list-style: none;
     align-items: center;
-    background-color: white;
+    background-color: var(--chocolate-white);
 }
 
 .navbar ul li a {
@@ -169,51 +175,23 @@ body {
 
 /* Hero con efecto de paralaje */
 .hero {
-   height: 100vh;
-   display: flex;
-   justify-content: flex-end; /* 👉 lleva el contenido a la derecha */
-   align-items: flex-start;
-   text-align: right; /* 👉 alinea el texto a la derecha */
-   color: white;
-   position: relative;
-   overflow: hidden;
-   padding: 180px 4%; /* 👉 separa del borde derecho */
+min-height: 100vh; /* altura total de la pantalla */
+  display: flex;
+  justify-content: flex-end; /* desktop: texto a la derecha */
+  align-items: flex-start;   /* inicio vertical */
+  text-align: right;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 5%; /* menos padding para que no se recorte */
+  background-image: url('img/index.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/img/index.jpg') center/cover no-repeat;
-    z-index: 1;
 
-}
 
-/* 👉 separa del borde derecho 
-
-.historia-hero::before {
- background: url('/img/historia.jpg') center/cover no-repeat;
- background-attachment: fixed;
-}
-
-.productos-hero::before {
- background: url('/img/productos.png') center/cover no-repeat;
- background-attachment: fixed;
-}
-
-.sostenibilidad-hero::before {
- background: url('/img/sostenibilidad.jpg') center/cover no-repeat;
- background-attachment: fixed;
-}
-
-.contacto-hero::before {
- background: url('/img/contacto.jpg') center/cover no-repeat;
- background-attachment: fixed;
-}
-*/
 
 .hero-content {
     position: relative;
@@ -235,7 +213,8 @@ body {
     transform: translateY(30px);
     opacity: 0;
     animation: fadeUp 1s ease forwards 0.3s;
-    white-space: nowrap;   /* 👉 fuerza todo el texto en una sola línea */
+    white-space: normal; /* <-- importante: permitir saltos para evitar overflow */
+    word-break: break-word;
 }
 
 .hero p {
@@ -308,9 +287,7 @@ body {
  /*animation: blink 3s infinite;  👈 parpadeo */
 }
 
-html {
- scroll-behavior: smooth;
-}
+
 
 /* Contenedor de flechas */
 .scroll-down .arrows {
@@ -864,13 +841,11 @@ footer {
     }
 
     .hero {
-       justify-content: center;  /* 👉 centramos el bloque */
-       padding: 0 5%;            /* menos margen lateral */
-       text-align: center;
-       align-items: center;
-       padding:  8% 0; /* 👈 espacio superior para no pegarlo al navbar */
-       height: auto;
-    min-height: 100dvh;
+    justify-content: center;
+       justify-content: center; /* centrar contenido en móvil */
+    align-items: center;
+    text-align: center;
+    padding: 60px 5%; /* menos padding en móviles */
    }
 
 
@@ -878,7 +853,7 @@ footer {
    .hero-content {
        align-items: center;      /* 👉 texto y botón centrados */
        text-align: center;
-       max-width: 100%;
+       max-width: 90%;
    }
 
    .hero h1 {

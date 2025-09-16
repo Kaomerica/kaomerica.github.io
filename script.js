@@ -1,3 +1,8 @@
+
+   
+   
+   
+   
    // Menú responsive mejorado
         const menuToggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
@@ -84,12 +89,6 @@ if (scrollBtn) {
 
        
 
-        // Efecto parallax para el hero
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            document.querySelector('.hero').style.backgroundPositionY = `calc(50% + ${scrollY * 0.5}px)`;
-        });
-
 
 
        // Restricción Numero de Telefono
@@ -155,3 +154,6 @@ if (form && formStatus) {
                 });
             });
         });
+
+
+
