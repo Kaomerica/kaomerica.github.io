@@ -61,7 +61,7 @@ body {
     top: 0;
     width: 100%;
     /* CAMBIO: Fondo blanco sólido */
-    background-color: var(--chocolate-white); 
+    background-color: white; 
     color: var(--chocolate-dark);
     display: flex;
     justify-content: space-between;
@@ -80,7 +80,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 1.8em;
     font-weight: 700;
-    color: var(--gold);
+  
    
 }
 
@@ -89,7 +89,7 @@ body {
     gap: 30px;
     list-style: none;
     align-items: center;
-    background-color: var(--chocolate-white);
+    background-color: white;
 }
 
 .navbar ul li a {
@@ -411,6 +411,83 @@ min-height: 100vh; /* altura total de la pantalla */
     font-weight: 700;
     color: var(--chocolate-dark);
 }
+
+
+
+/* Contenedor principal de la sección */
+.quienes-somos {
+    display: flex; /* Activa Flexbox para crear las columnas */
+    align-items: center; /* Centra las columnas verticalmente */
+    gap: 50px; /* Espacio entre la columna de texto y la imagen */
+    max-width: 1100px; /* Ancho máximo del contenedor */
+    width: 90%;
+    margin: 0 auto;
+    padding: 120px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Columna de texto (izquierda) */
+.texto-columna {
+    flex: 1; /* Permite que la columna de texto crezca */
+    min-width: 320px; /* Evita que el texto se comprima demasiado */
+}
+
+.texto-columna h2 {
+    font-family: 'Open Sans', sans-serif; /* La fuente del título en la imagen es sans-serif */
+    font-size: 1.8rem;
+    color: var(--chocolate-dark); /* Usamos tu variable de color */
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: left; /* Alineado a la izquierda, como en la imagen */
+}
+
+/* Por si el h2 hereda una línea decorativa de otro estilo, la quitamos */
+.texto-columna h2::after {
+    display: none;
+}
+
+.texto-columna p {
+    font-size: 1.1rem;
+    line-height: 1.7; /* Mejor interlineado para la lectura */
+    margin-bottom: 20px;
+    color: #555; /* Un gris oscuro es más suave para leer que el negro puro */
+}
+
+/* Columna de imagen (derecha) */
+.imagen-columna {
+    flex-basis: 350px; /* Ancho base para la columna de la imagen */
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.imagen-columna img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Bordes redondeados sutiles como en la imagen */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    /* ELIMINADO: Quitamos el borde blanco que no está en la imagen de ejemplo */
+}
+
+/* Estilo del botón "Conoce más" */
+.boton-conoce-mas {
+    display: inline-block;
+    background-color: #8c786c; /* Color exacto de la imagen */
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 8px; /* Bordes menos redondeados, como en la imagen */
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.boton-conoce-mas:hover {
+    background-color: #735f55; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de elevación sutil */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
 
 /* ==================================================================== */
 /* === CÓDIGO CSS FINAL Y DEFINITIVO PARA EL FORMULARIO === */
@@ -814,6 +891,25 @@ footer {
     .form-group.half {
         grid-column: span 2;
     }
+
+     .quienes-somos {
+        flex-direction: column; /* Apila las columnas una sobre otra */
+        text-align: center; /* Centra todo el contenido */
+    }
+
+    .texto-columna {
+        order: 2; /* Pone el texto debajo de la imagen en móvil */
+    }
+
+    .imagen-columna {
+        order: 1; /* Pone la imagen arriba */
+        margin-bottom: 40px; /* Espacio entre la imagen y el texto */
+    }
+
+    .texto-columna h2 {
+        text-align: center; /* También centramos el título */
+    }
+
 }
 
 @media (max-width: 768px) {
