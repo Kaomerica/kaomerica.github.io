@@ -175,19 +175,19 @@ body {
 
 /* Hero con efecto de paralaje */
 .hero {
-min-height: 100vh; /* altura total de la pantalla */
-  display: flex;
-  justify-content: flex-end; /* desktop: texto a la derecha */
-  align-items: flex-start;   /* inicio vertical */
-  text-align: right;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  padding: 120px 5%; /* menos padding para que no se recorte */
-  background-image: url('img/index.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* Alineamos el contenido arriba para controlarlo con padding */
+    padding-top: 30vh;        /* Empujamos el contenido hacia abajo (30% de la altura de la pantalla) */
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    /* Oscurecemos un poco más la imagen para mayor contraste */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/index.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 
@@ -195,26 +195,28 @@ min-height: 100vh; /* altura total de la pantalla */
 
 .hero-content {
     position: relative;
-   z-index: 2;
-   max-width: 700px;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-end; /* 👉 todo alineado a la derecha */
-   text-align: right;     /* 👉 texto alineado a la derecha */
+    z-index: 2;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .hero h1 {
-    font-size: 2.5em;
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 1px;
-    text-align: right;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 2px;       /* Espacio entre letras */
+    white-space: nowrap;       /* Mantiene el título en una sola línea en escritorios */
+    margin-bottom: 15px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    
+    /* Animaciones que ya tenías */
     transform: translateY(30px);
     opacity: 0;
     animation: fadeUp 1s ease forwards 0.3s;
-    white-space: normal; /* <-- importante: permitir saltos para evitar overflow */
-    word-break: break-word;
 }
 
 .hero p {
@@ -456,7 +458,7 @@ min-height: 100vh; /* altura total de la pantalla */
 
 /* Columna de imagen (derecha) */
 .imagen-columna {
-    flex-basis: 350px; /* Ancho base para la columna de la imagen */
+    flex-basis: 320px; /* Ancho base para la columna de la imagen */
     flex-shrink: 0; /* Evita que la imagen se encoja */
 }
 
@@ -746,29 +748,7 @@ footer {
     color: var(--chocolate-cream);
 }
 
-/* Botón scroll arriba */
-#scrollTopBtn {
-    display: none;
-    position: fixed;
-    bottom: 30px;
-    right: 25px;
-    background: var(--chocolate-medium);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 99;
-    transition: all 0.4s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
 
-#scrollTopBtn:hover {
-    background: var(--chocolate-dark);
-    transform: translateY(-5px);
-}
 
 /* WhatsApp */
 .whatsapp-float {
