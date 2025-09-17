@@ -420,11 +420,11 @@ body {
 .quienes-somos {
     display: flex; /* Activa Flexbox para crear las columnas */
     align-items: center; /* Centra las columnas verticalmente */
-    gap: 50px; /* Espacio entre la columna de texto y la imagen */
-    max-width: 1100px; /* Ancho máximo del contenedor */
+    gap: 60px; /* Espacio entre la columna de texto y la imagen */
+    max-width: 1200px; /* Ancho máximo del contenedor */
     width: 90%;
     margin: 0 auto;
-    padding: 120px 0;
+    padding: 140px 0;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -458,7 +458,7 @@ body {
 
 /* Columna de imagen (derecha) */
 .imagen-columna {
-    flex-basis: 320px; /* Ancho base para la columna de la imagen */
+    flex-basis: 300px; /* Ancho base para la columna de la imagen */
     flex-shrink: 0; /* Evita que la imagen se encoja */
 }
 
@@ -489,6 +489,100 @@ body {
     transform: translateY(-3px); /* Efecto de elevación sutil */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+
+/* ================================== */
+/* === ESTILOS PARA SOSTENIBILIDAD === */
+/* ================================== */
+
+.sustainability-section {
+    background-color: #f9f5f0; /* Un fondo crema muy claro, como el de la imagen */
+    padding: 140px 5%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.sustainability-container {
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: 0 auto;   /* Centrar el contenedor en la página */
+}
+
+.sustainability-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--chocolate-dark);
+    margin-bottom: 20px;
+}
+
+.sustainability-section .intro-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    max-width: 800px; /* Hacemos el párrafo un poco menos ancho */
+    margin-bottom: 50px;
+}
+
+.sustainability-section h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--chocolate-dark);
+    margin-bottom: 20px;
+}
+
+/* Contenedor Flex para la lista y el logo */
+.sustainability-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente el logo con la lista */
+    gap: 50px; /* Espacio entre la lista y el logo */
+}
+
+.sustainability-details {
+    flex: 1; /* Permite que esta columna ocupe el espacio disponible */
+}
+
+.sustainability-details ul {
+    list-style: disc;
+    padding-left: 20px; /* Espacio para los puntos de la lista */
+}
+
+.sustainability-details li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.sustainability-logo {
+    flex-basis: 310px; /* Ancho fijo para el logo */
+    flex-shrink: 0;   /* Evita que el logo se encoja */
+}
+
+.sustainability-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Botón "Conoce más" */
+.sustainability-section .btn-conoce-mas {
+    display: inline-block;
+    background-color: #8c786c;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 50px; /* Espacio sobre el botón */
+    transition: all 0.3s ease;
+}
+
+.sustainability-section .btn-conoce-mas:hover {
+    background-color: #735f55;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
 
 
 /* ==================================================================== */
@@ -915,35 +1009,33 @@ footer {
     }
 
     .hero {
-    justify-content: center;
-       justify-content: center; /* centrar contenido en móvil */
-    align-items: center;
-    text-align: center;
-    padding: 60px 5%; /* menos padding en móviles */
-   }
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* AJUSTADO: Se corrige el padding para que no sea tan grande en móvil */
+        padding: 0 5%;
+    }
 
+    .hero-content {
+        align-items: center;
+        text-align: center;
+        max-width: 90%;
+    }
 
+    .hero h1 {
+        text-align: center;
+        font-size: 1.8em;
+        white-space: normal; /* Permite saltos de línea en móvil */
+    }
 
-   .hero-content {
-       align-items: center;      /* 👉 texto y botón centrados */
-       text-align: center;
-       max-width: 90%;
-   }
+    .hero p {
+        font-size: 1.2em;
+    }
 
-   .hero h1 {
-       text-align: center;
-       font-size: 1.8em;         /* más pequeño */
-       white-space: normal ;       /* 👉 permite saltos */
-   }
-
-   .hero p {
-       font-size: 1.2em;
-   }
-
-   .hero .btn {
-       padding: 10px 25px;
-       font-size: 0.9em;
-   }
+    .hero .btn {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
 
     .section {
         padding: 80px 5%;
@@ -951,6 +1043,38 @@ footer {
 
     .section h2 {
         font-size: 2.3em;
+    }
+
+    /* --- CAMBIOS IMPORTANTES AQUÍ --- */
+    .sustainability-section {
+        /* 1. CORREGIDO: Reducimos el padding vertical excesivo */
+        padding: 150px 5%;
+    }
+    
+    .sustainability-content {
+        flex-direction: column;
+    }
+
+    .sustainability-logo {
+        order: -1;
+        margin-bottom: 0;
+    }
+
+    /* 2. AÑADIDO: Quitamos el margen superior del subtítulo que causa el espacio */
+    .sustainability-section h3 {
+        margin-top: 0;
+    }
+
+    .sustainability-container {
+        text-align: center;
+    }
+    .sustainability-section h2,
+    .sustainability-section .intro-paragraph {
+        text-align: center;
+    }
+    .sustainability-details ul {
+        text-align: left;
+        display: inline-block;
     }
 }
 
