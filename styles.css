@@ -319,16 +319,14 @@ min-height: 100vh; /* altura total de la pantalla */
 
 /* Secciones */
 .section {
-    padding: 100px 5%;
+    padding:  120px 5%; /* Reducimos el espacio de 100px a 60px */
+    /* Eliminamos 'min-height: 90vh;' para que la altura se ajuste al contenido */
     max-width: 1200px;
     margin: auto;
     position: relative;
-     /* --- AÑADE ESTAS LÍNEAS --- */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    min-height: 90vh; /* Ajusta la altura para darle espacio donde centrarse */
 }
 
 .section h2 {
