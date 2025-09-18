@@ -16,14 +16,23 @@
 
 html {
  scroll-behavior: smooth;
-
+width: 100%;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%; /* iOS Safari */
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;  
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--chocolate-dark);
     background-color: var(--chocolate-white);
-    scroll-behavior: smooth;
+    width: 100%;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%; /* iOS Safari */
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
     overflow-x: hidden;
 }
 
