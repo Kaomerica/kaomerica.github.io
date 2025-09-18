@@ -582,6 +582,84 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* ================================================= */
+/* === ESTILOS PERSONALIZADOS PARA PÁGINA DE PRODUCTOS === */
+/* ================================================= */
+
+/* Contenedor principal de la página de productos */
+.products-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 160px 20px 20px; /* Aplicamos el padding aquí en lugar de en el body */
+    font-family: 'Montserrat', sans-serif; /* La fuente se aplica solo a esta sección */
+}
+
+/* Estilos de cada categoría de productos DENTRO de la página de productos */
+.products-page .product-category {
+    margin-bottom: 140px;
+}
+
+.products-page .category-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4a2c2a; /* Marrón oscuro */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 50px;
+}
+
+/* Grilla de productos */
+.products-page .product-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.products-page .product-grid.four-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Tarjeta de producto individual */
+.products-page .product-card {
+    margin: 0;
+    padding: 0;
+}
+
+.products-page .product-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products-page .product-card img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.products-page .product-card figcaption {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #8B4513; /* Marrón medio */
+}
+
+/* Contenedor para las dos últimas categorías */
+.products-page .category-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+/* Regla #2: Limita el tamaño de las tarjetas de producto que van solas. */
+.products-page .category-wrapper .product-grid {
+    max-width: 260px;
+    margin: 0 auto;
+}
 
 
 
