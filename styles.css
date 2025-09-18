@@ -1283,7 +1283,44 @@ footer {
   .products-page .category-wrapper .product-grid {
     max-width: 80%; /* que no quede tan angosto */
   }
+        /* FORMULARIO DE COTIZACIÓN VERSION MOVIL */
+
+.form-section {
+        padding-top: 140px;
+    }
+
+  .form-contacto {
+    margin-top: 40px;       /* agrega espacio sobre el título */
+    grid-template-columns: 1fr;  /* una sola columna en móvil */
+    gap: 20px;              /* un poco menos de separación */
+    padding: 0 15px;        /* margen lateral interno */
+  }
+
+  /* Los grupos ya no necesitan forzar span 2 */
+  .form-group,
+  .form-group-radio,
+  .form-contacto button {
+    grid-column: 1 / -1;    /* que ocupen todo el ancho disponible */
+  }
+
+  /* Ajuste en tipografías para pantallas pequeñas */
+  .form-contacto input,
+  .form-contacto textarea,
+  .form-contacto select,
+  .form-group-radio p,
+  .form-group-radio label {
+    font-size: 1em;
+  }
+
+  /* Botón un poco más cómodo en móvil */
+ 
+
+
+    
 }
+
+
+
 
 
 
